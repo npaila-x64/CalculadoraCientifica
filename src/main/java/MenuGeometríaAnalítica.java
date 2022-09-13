@@ -20,7 +20,7 @@ public class MenuGeometríaAnalítica {
         }
     }
 
-    private void mostrarMenuCalcularCuadrilatero() {
+    private void mostrarMenuOpcionCalculoFigura() {
         System.out.print("""
                 ¿Que desea calcular?
                 [1] Perímetro
@@ -29,42 +29,53 @@ public class MenuGeometríaAnalítica {
                 """.concat("> "));
     }
 
+    private void mostrarMenuOpcionCalculoCuerpo() {
+        System.out.print("""
+                ¿Que desea calcular?
+                [1] Área
+                [2] Volumen
+                Si desea volver escriba [0]
+                """.concat("> "));
+    }
+
     private void mostrarMenuCalculoCuadrado() {
         System.out.print("""
-                Usted escogió el cuadrado, los cuadrados poseen 4 lados iguales
+                Usted escogió el cuadrado, los cuadrados
+                poseen 4 lados de misma longitud
                 Por favor, introduzca la longitud de un lado
                 """.concat("Longitud> "));
         double lon = pedirEntradaNumerica();
-
-        mostrarMenuCalcularCuadrilatero();
+        mostrarMenuOpcionCalculoFigura();
         fueraDeBucle:
         while (true) {
             switch (pedirOpcion()) {
                 case 0:
                     break fueraDeBucle;
                 case 1:
-                    mostrarCalculoPerimetro(lon, lon, lon, lon);
+                    mostrarCalculoPerimetro(GeometriaAnaliticaUtils.
+                            calcularPerimetroCuadrilatero(lon, lon, lon, lon));
                     break;
                 case 2:
-                    mostrarCalculoArea(lon, lon);
+                    mostrarCalculoArea(GeometriaAnaliticaUtils.
+                            calcularAreaCuadrilatero(lon, lon));
                     break;
                 default:
                     mostrarOpcionInvalida();
             }
-            mostrarMenuCalcularCuadrilatero();
+            mostrarMenuOpcionCalculoFigura();
         }
     }
 
-    private void mostrarCalculoPerimetro(double lon1, double lon2, double lon3, double lon4) {
-        double perimetro = GeometriaAnaliticaUtils.
-                calcularPerimetroCuadrilatero(lon1, lon2, lon3, lon4);
+    private void mostrarCalculoPerimetro(double perimetro) {
         System.out.println("\t\t\t\tEl perímetro es: " + perimetro);
     }
 
-    private void mostrarCalculoArea(double lon1, double lon2) {
-        double area = GeometriaAnaliticaUtils.
-                calcularAreaCuadrilatero(lon1, lon2);
+    private void mostrarCalculoArea(double area) {
         System.out.println("\t\t\t\tEl área es: " + area);
+    }
+
+    private void mostrarCalculoVolumen(double area) {
+        System.out.println("\t\t\t\tEl volumen es: " + area);
     }
 
     private void mostrarMenuCalculoRectangulo() {
@@ -77,39 +88,143 @@ public class MenuGeometríaAnalítica {
         double lon1 = pedirEntradaNumerica();
         System.out.print("2° Longitud> ");
         double lon2 = pedirEntradaNumerica();
-        mostrarMenuCalcularCuadrilatero();
+        mostrarMenuOpcionCalculoFigura();
         fueraDeBucle:
         while (true) {
             switch (pedirOpcion()) {
                 case 0:
                     break fueraDeBucle;
                 case 1:
-                    mostrarCalculoPerimetro(lon1, lon1, lon2, lon2);
+                    mostrarCalculoPerimetro(GeometriaAnaliticaUtils.
+                            calcularPerimetroCuadrilatero(lon1, lon1, lon2, lon2));
                     break;
                 case 2:
-                    mostrarCalculoArea(lon1, lon2);
+                    mostrarCalculoArea(GeometriaAnaliticaUtils.
+                            calcularAreaCuadrilatero(lon1, lon2));
                     break;
                 default:
                     mostrarOpcionInvalida();
             }
-            mostrarMenuCalcularCuadrilatero();
+            mostrarMenuOpcionCalculoFigura();
         }
     }
 
     private void mostrarMenuCalculoCirculo() {
-
+        System.out.print("""
+                Usted escogió el círculo, los círculos
+                poseen un radio de longitud positiva
+                Por favor, introduzca el radio del círculo
+                """);
+        System.out.print("Radio> ");
+        double radio = pedirEntradaNumerica();
+        mostrarMenuOpcionCalculoFigura();
+        fueraDeBucle:
+        while (true) {
+            switch (pedirOpcion()) {
+                case 0:
+                    break fueraDeBucle;
+                case 1:
+                    mostrarCalculoPerimetro(GeometriaAnaliticaUtils.
+                            calcularPerimetroCirculo(radio));
+                    break;
+                case 2:
+                    mostrarCalculoArea(GeometriaAnaliticaUtils.
+                            calcularAreaCirculo(radio));
+                    break;
+                default:
+                    mostrarOpcionInvalida();
+            }
+            mostrarMenuOpcionCalculoFigura();
+        }
     }
 
     private void mostrarMenuCalculoEsfera() {
-
+        System.out.print("""
+                Usted escogió la esfera, las esferas
+                poseen un radio de longitud positiva
+                Por favor, introduzca el radio de la esfera
+                """);
+        System.out.print("Radio> ");
+        double radio = pedirEntradaNumerica();
+        mostrarMenuOpcionCalculoCuerpo();
+        fueraDeBucle:
+        while (true) {
+            switch (pedirOpcion()) {
+                case 0:
+                    break fueraDeBucle;
+                case 1:
+                    mostrarCalculoArea(GeometriaAnaliticaUtils.
+                            calcularAreaEsfera(radio));
+                    break;
+                case 2:
+                    mostrarCalculoVolumen(GeometriaAnaliticaUtils.
+                            calcularVolumenEsfera(radio));
+                    break;
+                default:
+                    mostrarOpcionInvalida();
+            }
+            mostrarMenuOpcionCalculoCuerpo();
+        }
     }
 
     private void mostrarMenuCalculoCubo() {
-
+        System.out.print("""
+                Usted escogió el cubo, los cubos
+                poseen 12 lados de misma longitud
+                Por favor, introduzca la longitud de un lado
+                """);
+        System.out.print("Longitud> ");
+        double lado = pedirEntradaNumerica();
+        mostrarMenuOpcionCalculoCuerpo();
+        fueraDeBucle:
+        while (true) {
+            switch (pedirOpcion()) {
+                case 0:
+                    break fueraDeBucle;
+                case 1:
+                    mostrarCalculoArea(GeometriaAnaliticaUtils.
+                            calcularAreaCubo(lado));
+                    break;
+                case 2:
+                    mostrarCalculoVolumen(GeometriaAnaliticaUtils.
+                            calcularVolumenCubo(lado));
+                    break;
+                default:
+                    mostrarOpcionInvalida();
+            }
+            mostrarMenuOpcionCalculoCuerpo();
+        }
     }
 
     private void mostrarMenuCalculoCono() {
-
+        System.out.print("""
+                Usted escogió el cono, los conos
+                poseen un radio basal y una altura
+                Por favor, introduzca el radio y la altura
+                """);
+        System.out.print("Radio> ");
+        double radio = pedirEntradaNumerica();
+        System.out.print("Altura> ");
+        double altura = pedirEntradaNumerica();
+        mostrarMenuOpcionCalculoCuerpo();
+        fueraDeBucle:
+        while (true) {
+            switch (pedirOpcion()) {
+                case 0:
+                    break fueraDeBucle;
+                case 1:
+                    mostrarCalculoArea(GeometriaAnaliticaUtils.
+                            calcularAreaCono(radio, altura));
+                    break;
+                case 2:
+                    mostrarCalculoVolumen(GeometriaAnaliticaUtils.
+                            calcularVolumenCono(radio, altura));
+                    break;
+                default:
+                    mostrarOpcionInvalida();
+            }
+            mostrarMenuOpcionCalculoCuerpo();
+        }
     }
 
     private int pedirValorEntero() throws InputMismatchException {
@@ -127,7 +242,7 @@ public class MenuGeometríaAnalítica {
 
     private Double pedirValorDoublePositivo() throws InputMismatchException {
         Double entrada = new Scanner(System.in).nextDouble();
-        if (entrada < 0) throw new InputMismatchException();
+        if (entrada <= 0) throw new InputMismatchException();
         return entrada;
     }
 
