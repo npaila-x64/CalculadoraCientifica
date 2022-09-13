@@ -1,4 +1,4 @@
-public class CalculoGeometríaAnalítica {
+public class GeometriaAnaliticaUtils {
 
     public static double calcularPerimetroCuadrilatero(double l1, double l2, double l3, double l4) {
         return l1+l2+l3+l4;
