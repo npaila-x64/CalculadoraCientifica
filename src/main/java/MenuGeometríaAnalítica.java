@@ -46,24 +46,18 @@ public class MenuGeometríaAnalítica {
                 """.concat("Longitud> "));
         double lon = pedirEntradaNumerica();
         mostrarMenuOpcionCalculoFigura();
-        fueraDeBucle:
-        while (true) {
+        int contador = 0;
+        do {
             switch (pedirOpcion()) {
-                case 0:
-                    break fueraDeBucle;
-                case 1:
-                    mostrarCalculoPerimetro(GeometriaAnaliticaUtils.
-                            calcularPerimetroCuadrilatero(lon, lon, lon, lon));
-                    break;
-                case 2:
-                    mostrarCalculoArea(GeometriaAnaliticaUtils.
-                            calcularAreaCuadrilatero(lon, lon));
-                    break;
-                default:
-                    mostrarOpcionInvalida();
+                case 0 -> contador++;
+                case 1 -> mostrarCalculoPerimetro(GeometriaAnaliticaUtils.
+                        calcularPerimetroCuadrilatero(lon, lon, lon, lon));
+                case 2 -> mostrarCalculoArea(GeometriaAnaliticaUtils.
+                        calcularAreaCuadrilatero(lon, lon));
+                default -> mostrarOpcionInvalida();
             }
             mostrarMenuOpcionCalculoFigura();
-        }
+        } while (contador == 0);
     }
 
     private void mostrarCalculoPerimetro(double perimetro) {
@@ -89,24 +83,18 @@ public class MenuGeometríaAnalítica {
         System.out.print("2° Longitud> ");
         double lon2 = pedirEntradaNumerica();
         mostrarMenuOpcionCalculoFigura();
-        fueraDeBucle:
-        while (true) {
+        int contador = 0;
+        do {
             switch (pedirOpcion()) {
-                case 0:
-                    break fueraDeBucle;
-                case 1:
-                    mostrarCalculoPerimetro(GeometriaAnaliticaUtils.
-                            calcularPerimetroCuadrilatero(lon1, lon1, lon2, lon2));
-                    break;
-                case 2:
-                    mostrarCalculoArea(GeometriaAnaliticaUtils.
-                            calcularAreaCuadrilatero(lon1, lon2));
-                    break;
-                default:
-                    mostrarOpcionInvalida();
+                case 0 -> contador++;
+                case 1 -> mostrarCalculoPerimetro(GeometriaAnaliticaUtils.
+                        calcularPerimetroCuadrilatero(lon1, lon1, lon2, lon2));
+                case 2 -> mostrarCalculoArea(GeometriaAnaliticaUtils.
+                        calcularAreaCuadrilatero(lon1, lon2));
+                default -> mostrarOpcionInvalida();
             }
             mostrarMenuOpcionCalculoFigura();
-        }
+        } while (contador == 0);
     }
 
     private void mostrarMenuCalculoCirculo() {
@@ -118,24 +106,18 @@ public class MenuGeometríaAnalítica {
         System.out.print("Radio> ");
         double radio = pedirEntradaNumerica();
         mostrarMenuOpcionCalculoFigura();
-        fueraDeBucle:
-        while (true) {
+        int contador = 0;
+        do {
             switch (pedirOpcion()) {
-                case 0:
-                    break fueraDeBucle;
-                case 1:
-                    mostrarCalculoPerimetro(GeometriaAnaliticaUtils.
-                            calcularPerimetroCirculo(radio));
-                    break;
-                case 2:
-                    mostrarCalculoArea(GeometriaAnaliticaUtils.
-                            calcularAreaCirculo(radio));
-                    break;
-                default:
-                    mostrarOpcionInvalida();
+                case 0 -> contador++;
+                case 1 -> mostrarCalculoPerimetro(GeometriaAnaliticaUtils.
+                        calcularPerimetroCirculo(radio));
+                case 2 -> mostrarCalculoArea(GeometriaAnaliticaUtils.
+                        calcularAreaCirculo(radio));
+                default -> mostrarOpcionInvalida();
             }
             mostrarMenuOpcionCalculoFigura();
-        }
+        } while (contador == 0);
     }
 
     private void mostrarMenuCalculoEsfera() {
@@ -147,24 +129,18 @@ public class MenuGeometríaAnalítica {
         System.out.print("Radio> ");
         double radio = pedirEntradaNumerica();
         mostrarMenuOpcionCalculoCuerpo();
-        fueraDeBucle:
-        while (true) {
+        int contador = 0;
+        do {
             switch (pedirOpcion()) {
-                case 0:
-                    break fueraDeBucle;
-                case 1:
-                    mostrarCalculoArea(GeometriaAnaliticaUtils.
-                            calcularAreaEsfera(radio));
-                    break;
-                case 2:
-                    mostrarCalculoVolumen(GeometriaAnaliticaUtils.
-                            calcularVolumenEsfera(radio));
-                    break;
-                default:
-                    mostrarOpcionInvalida();
+                case 0 -> contador++;
+                case 1 -> mostrarCalculoArea(GeometriaAnaliticaUtils.
+                        calcularAreaEsfera(radio));
+                case 2 -> mostrarCalculoVolumen(GeometriaAnaliticaUtils.
+                        calcularVolumenEsfera(radio));
+                default -> mostrarOpcionInvalida();
             }
             mostrarMenuOpcionCalculoCuerpo();
-        }
+        } while (contador == 0);
     }
 
     private void mostrarMenuCalculoCubo() {
@@ -176,24 +152,18 @@ public class MenuGeometríaAnalítica {
         System.out.print("Longitud> ");
         double lado = pedirEntradaNumerica();
         mostrarMenuOpcionCalculoCuerpo();
-        fueraDeBucle:
-        while (true) {
+        int contador = 0;
+        do {
             switch (pedirOpcion()) {
-                case 0:
-                    break fueraDeBucle;
-                case 1:
-                    mostrarCalculoArea(GeometriaAnaliticaUtils.
-                            calcularAreaCubo(lado));
-                    break;
-                case 2:
-                    mostrarCalculoVolumen(GeometriaAnaliticaUtils.
-                            calcularVolumenCubo(lado));
-                    break;
-                default:
-                    mostrarOpcionInvalida();
+                case 0 -> contador++;
+                case 1 -> mostrarCalculoArea(GeometriaAnaliticaUtils.
+                        calcularAreaCubo(lado));
+                case 2 -> mostrarCalculoVolumen(GeometriaAnaliticaUtils.
+                        calcularVolumenCubo(lado));
+                default -> mostrarOpcionInvalida();
             }
             mostrarMenuOpcionCalculoCuerpo();
-        }
+        } while (contador == 0);
     }
 
     private void mostrarMenuCalculoCono() {
@@ -207,24 +177,18 @@ public class MenuGeometríaAnalítica {
         System.out.print("Altura> ");
         double altura = pedirEntradaNumerica();
         mostrarMenuOpcionCalculoCuerpo();
-        fueraDeBucle:
-        while (true) {
+        int contador = 0;
+        do {
             switch (pedirOpcion()) {
-                case 0:
-                    break fueraDeBucle;
-                case 1:
-                    mostrarCalculoArea(GeometriaAnaliticaUtils.
-                            calcularAreaCono(radio, altura));
-                    break;
-                case 2:
-                    mostrarCalculoVolumen(GeometriaAnaliticaUtils.
-                            calcularVolumenCono(radio, altura));
-                    break;
-                default:
-                    mostrarOpcionInvalida();
+                case 0 -> contador++;
+                case 1 -> mostrarCalculoArea(GeometriaAnaliticaUtils.
+                        calcularAreaCono(radio, altura));
+                case 2 -> mostrarCalculoVolumen(GeometriaAnaliticaUtils.
+                        calcularVolumenCono(radio, altura));
+                default -> mostrarOpcionInvalida();
             }
             mostrarMenuOpcionCalculoCuerpo();
-        }
+        } while (contador == 0);
     }
 
     private int pedirValorEntero() throws InputMismatchException {
@@ -257,6 +221,7 @@ public class MenuGeometríaAnalítica {
 
     private void mostrarOpciones() {
         System.out.print("""
+                    
                        !!Bienvenido a la calculadora analítica!!
                     ¿Que figura o cuerpo geométrico quiere analizar?
                     Escriba una opción
