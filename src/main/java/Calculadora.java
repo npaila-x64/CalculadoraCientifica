@@ -2,10 +2,13 @@ import javax.lang.model.element.ModuleElement;
 import javax.xml.catalog.Catalog;
 import java.io.IOException;
 import java.util.InputMismatchException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Calculadora {
-
+    public static void main(String[] args) {
+        resolverCuadratica();
+    }
     public static double discriminanteEcuacion(Double[] coeficientesNumericos) {
         Double discriminante = -1.0;
         try {
@@ -80,17 +83,41 @@ public class Calculadora {
     }
 
     public static Double preguntarDouble() {
-        Double numero = null;
         Scanner input = new Scanner(System.in);
         try {
-            numero = input.nextDouble();
-        }
-        catch (InputMismatchException e) {
+            double numero = input.nextDouble();
+            return numero;
+        } catch (InputMismatchException e) {
             System.out.println("No se ha introducido un decimal.");
             return preguntarDouble();
         }
-        finally {
-            return numero != null ? numero : preguntarDouble();
+    }
+
+    public static void mostrarSoluciones(Double[] soluciones) {
+        try {
+            if (Objects.equals(soluciones[0], soluciones[1])) {
+                System.out.println("El sistema tiene una sola solución, y es " + soluciones[0]);
+            } else {
+                System.out.println("El sistema posee dos soluciones, " + soluciones[0] + " y " + soluciones[1]);
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("No hay suficientes términos en el vector");
+        }
+        catch (NullPointerException e) {
+            System.out.println("Hay valores nulos dentro de las soluciones");
         }
     }
+
+    public static void resolverCuadratica() {
+        Double[] coeficientesNumericos = obtenerCoeficientesNumericos();
+        if (discriminanteEcuacion(coeficientesNumericos) >= 0) {
+            Double[] soluciones = obtenerSolucionesCuadraticas(coeficientesNumericos);
+            mostrarSoluciones(soluciones);
+        } else {
+            System.out.println("La ecuación no tiene solución en los reales.");
+        }
+    }
+
+
 }
