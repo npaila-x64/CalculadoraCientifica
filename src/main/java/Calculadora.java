@@ -1,7 +1,7 @@
 public class Calculadora {
 
     public static void main(String[] args) {
-        MenuGeometríaAnalítica calc = new MenuGeometríaAnalítica();
+        MenuCalculoRectaLineal calc = new MenuCalculoRectaLineal();
         calc.mostrarMenu();
     }
 

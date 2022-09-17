@@ -15,7 +15,7 @@ class CalculoRectaLinealUtilsTest {
     @Test
     void obtenerEcuacionTest() {
         double x1 = 1; double y1 = 2; double x2 = -2; double y2 = 3;
-        String ecuacionReal = "y=-0.333333333333333x+2.333333333333334";
+        String ecuacionReal = "y = -0.333333333333333x + 2.333333333333334";
         String ecuacionObtenida = CalculoRectaLinealUtils.obtenerEcuacion(x1, y1, x2, y2);
         assertEquals(ecuacionReal, ecuacionObtenida);
     }
