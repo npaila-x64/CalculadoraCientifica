@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MenuGeometríaAnalítica {
+public class MenuGeometriaAnalitica {
 
     public void mostrarMenu() {
         mostrarOpciones();
