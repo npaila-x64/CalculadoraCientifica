@@ -13,6 +13,28 @@ public class resolverCuadratica {
             System.out.println("La ecuación no tiene solución en los reales.");
         }
     }
+
+
+    public static void mostrarSoluciones(Double[] soluciones) {
+        try {
+            if (!contieneNulo(soluciones)) {
+                if (Objects.equals(soluciones[0], soluciones[1])) {
+                    System.out.println("El sistema tiene una sola solución, y es " + soluciones[0]);
+                } else {
+                    System.out.println("El sistema posee dos soluciones, " + soluciones[0] + " y " + soluciones[1]);
+                }
+            } else {
+                System.out.println("La solución contiene valores nulos.");
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("No hay suficientes términos en el vector");
+        }
+        catch (NullPointerException e) {
+            System.out.println("Hay valores nulos dentro de las soluciones");
+        }
+    }
+
     public static Double[] obtenerSolucionesCuadraticas(Double[] coeficientesNumericos) {
         Double[] soluciones = new Double[2];
 
@@ -36,22 +58,6 @@ public class resolverCuadratica {
 
         finally {
             return soluciones;
-        }
-    }
-
-    public static void mostrarSoluciones(Double[] soluciones) {
-        try {
-            if (Objects.equals(soluciones[0], soluciones[1])) {
-                System.out.println("El sistema tiene una sola solución, y es " + soluciones[0]);
-            } else {
-                System.out.println("El sistema posee dos soluciones, " + soluciones[0] + " y " + soluciones[1]);
-            }
-        }
-        catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("No hay suficientes términos en el vector");
-        }
-        catch (NullPointerException e) {
-            System.out.println("Hay valores nulos dentro de las soluciones");
         }
     }
 
@@ -88,6 +94,15 @@ public class resolverCuadratica {
             System.out.println("Hay un valor nulo en el vector");
             return false;
         }
+    }
+
+    public static boolean contieneNulo(Double[] arreglo) {
+        for (Double elemento : arreglo) {
+            if (elemento == null) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Double[] obtenerCoeficientesNumericos() {

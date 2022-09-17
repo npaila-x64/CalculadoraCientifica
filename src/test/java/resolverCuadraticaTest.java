@@ -7,11 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class resolverCuadraticaTest {
 
-    @DisplayName("Se prepara un objeto representante de la clase, para no cambiar los atributos de los métodos.")
-    @BeforeEach
-    public void setUp() {
-        resolverCuadratica resolverCuadratica = new resolverCuadratica();
-    }
+    // Test discriminante.
 
     @DisplayName("Prueba discriminante con valor nulo")
     @Test
@@ -25,16 +21,25 @@ class resolverCuadraticaTest {
     @DisplayName("Prueba discriminante con arreglo de tamaño menor al esperado")
     @Test
     public void testDiscriminanteArregloMenorDimension() {
-        Double[] test = {0.2,0.2};
+        Double[] test = {0.2, 0.2};
         assertThrows(ArrayIndexOutOfBoundsException.class,
-                    () -> resolverCuadratica.discriminante(test),
-                    "El arreglo posee un tamaño menor al esperado.");
+                () -> resolverCuadratica.discriminante(test),
+                "El arreglo posee un tamaño menor al esperado.");
     }
+
+    @DisplayName("Prueba discriminante, caso correcto")
+    @Test
+    public void testDiscriminante() {
+        Double[] test = {1.0, -9.0, 0.01};
+        assertEquals(80.96, resolverCuadratica.discriminante(test), 1e-6);
+    }
+
+    // Test validar coeficientes numéricos.
 
     @DisplayName("Validación de coeficiente numérico con variables del tipo null")
     @Test
-    public void testValidarCoeficientesNumericosNull(){
-        Double[] test = {null,0.2,2.5};
+    public void testValidarCoeficientesNumericosNull() {
+        Double[] test = {null, 0.2, 2.5};
         assertThrows(NullPointerException.class,
                 () -> resolverCuadratica.validarCoeficientesNumericos(test),
                 "Hay un valor nulo en el arreglo.");
@@ -43,14 +48,23 @@ class resolverCuadraticaTest {
     @DisplayName("Validacion de coeficiente numérico con arreglo de tamaño distinto")
     @Test
     public void testValidarCoeficientesNumericosDistintoTamaño() {
-        Double[] test = {0.2,0.1,0.3,0.1};
+        Double[] test = {0.2, 0.1, 0.3, 0.1};
         assertFalse(resolverCuadratica.validarCoeficientesNumericos(test));
     }
+
+    @DisplayName("Validación de coeficientes numéricos, caso a=0")
+    @Test
+    public void testValidarCoeficientesNnumericosA0() {
+        Double[] test = {0.0, 1.0, 2.0};
+        assertFalse(resolverCuadratica.validarCoeficientesNumericos(test));
+    }
+
+    // Test de obtener soluciones
 
     @DisplayName("Obtener soluciones cuando a = 0")
     @Test
     public void testObtenerSolucionesCuadraticasA0() {
-        Double[] test = {0.0,3.1,2.2};
+        Double[] test = {0.0, 3.1, 2.2};
         assertThrows(ArithmeticException.class,
                 () -> resolverCuadratica.obtenerSolucionesCuadraticas(test),
                 "Hubo división por cero.");
@@ -65,6 +79,8 @@ class resolverCuadraticaTest {
                 "No se puede acceder a alguna posición del arreglo");
     }
 
+    //Test mostrar soluciones
+
     @DisplayName("Mostrar soluciones cuando el vector tiene un tamaño inferior a 2")
     @Test
     public void testMostrarSolucionesVectorInfimo() {
@@ -73,5 +89,15 @@ class resolverCuadraticaTest {
                 () -> resolverCuadratica.mostrarSoluciones(test),
                 "No se puede acceder a ciertas posiciones del vector.");
     }
+
+    @DisplayName("Mostrar soluciones, caso con nulls")
+    @Test
+    public void testMostrarSolucionesNull() {
+        Double[] test = {null,null};
+        assertThrows(NullPointerException.class,
+                () -> resolverCuadratica.mostrarSoluciones(test),
+                "Los valores dentro del arreglo son nulos.");
+    }
+
 
 }
