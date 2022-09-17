@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d88fcf17-9e97-4e0e-8f6a-b23a140eae6c" name="Changes" comment="agrega clase calculadora">
-      <change afterPath="$PROJECT_DIR$/src/main/java/resolverCuadratica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CalculadoraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CalculadoraTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resolverCuadratica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resolverCuadratica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,16 +42,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "openjdk-18"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -62,27 +60,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.resolverCuadraticaTest.testDiscriminanteEcuacionValorNulo">
-    <configuration name="CalculadoraTest.testDiscriminanteEcuacionValorNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CalculadoraCientifica" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CalculadoraTest" />
-      <option name="METHOD_NAME" value="testDiscriminanteEcuacionValorNulo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalculadoraTest.testValidarCoeficientesNumericosA0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CalculadoraCientifica" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CalculadoraTest" />
-      <option name="METHOD_NAME" value="testValidarCoeficientesNumericosA0" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.resolverCuadraticaTest.testObtenerSolucionesCuadraticasVectorPequeño">
     <configuration name="resolverCuadraticaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CalculadoraCientifica" />
       <option name="PACKAGE_NAME" value="" />
@@ -92,21 +70,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="resolverCuadraticaTest.testDiscriminanteArregloMenorDimension" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="resolverCuadraticaTest.testMostrarSolucionesVectorInfimo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CalculadoraCientifica" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="resolverCuadraticaTest" />
-      <option name="METHOD_NAME" value="testDiscriminanteArregloMenorDimension" />
+      <option name="METHOD_NAME" value="testMostrarSolucionesVectorInfimo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="resolverCuadraticaTest.testDiscriminanteEcuacionValorNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="resolverCuadraticaTest.testObtenerSolucionesCuadraticasA0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CalculadoraCientifica" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="resolverCuadraticaTest" />
-      <option name="METHOD_NAME" value="testDiscriminanteEcuacionValorNulo" />
+      <option name="METHOD_NAME" value="testObtenerSolucionesCuadraticasA0" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="resolverCuadraticaTest.testObtenerSolucionesCuadraticasVectorPequeño" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CalculadoraCientifica" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="resolverCuadraticaTest" />
+      <option name="METHOD_NAME" value="testObtenerSolucionesCuadraticasVectorPequeño" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="resolverCuadraticaTest.testValidarCoeficientesNumericosDistintoTamaño" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CalculadoraCientifica" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="resolverCuadraticaTest" />
+      <option name="METHOD_NAME" value="testValidarCoeficientesNumericosDistintoTamaño" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.resolverCuadraticaTest.testDiscriminanteArregloMenorDimension" />
-        <item itemvalue="JUnit.resolverCuadraticaTest.testDiscriminanteEcuacionValorNulo" />
+        <item itemvalue="JUnit.resolverCuadraticaTest.testObtenerSolucionesCuadraticasVectorPequeño" />
+        <item itemvalue="JUnit.resolverCuadraticaTest.testMostrarSolucionesVectorInfimo" />
+        <item itemvalue="JUnit.resolverCuadraticaTest.testObtenerSolucionesCuadraticasA0" />
+        <item itemvalue="JUnit.resolverCuadraticaTest.testValidarCoeficientesNumericosDistintoTamaño" />
         <item itemvalue="JUnit.resolverCuadraticaTest" />
-        <item itemvalue="JUnit.CalculadoraTest.testValidarCoeficientesNumericosA0" />
-        <item itemvalue="JUnit.CalculadoraTest.testDiscriminanteEcuacionValorNulo" />
       </list>
     </recent_temporary>
   </component>
@@ -175,6 +173,16 @@
             </State>
           </value>
         </entry>
+        <entry key="a7ffe8ec-9197-47f7-aa8b-612b02e75182">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a7ffe8ec-9197-47f7-aa8b-612b02e75182" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
@@ -182,5 +190,44 @@
     <MESSAGE value="commit inicial" />
     <MESSAGE value="agrega clase calculadora" />
     <option name="LAST_COMMIT_MESSAGE" value="agrega clase calculadora" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java</url>
+          <line>17</line>
+          <properties class="resolverCuadraticaTest" method="testDiscriminanteEcuacionValorNulo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java</url>
+          <line>69</line>
+          <properties class="resolverCuadraticaTest" method="testMostrarSolucionesVectorInfimo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

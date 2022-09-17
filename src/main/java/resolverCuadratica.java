@@ -4,14 +4,18 @@ import java.util.Scanner;
 
 public class resolverCuadratica {
 
-
-
-
-
-
-
-    public Double[] obtenerSolucionesCuadraticas(Double[] coeficientesNumericos) {
+    public void resolverCuadratica() {
+        Double[] coeficientesNumericos = obtenerCoeficientesNumericos();
+        if (discriminante(coeficientesNumericos) >= 0) {
+            Double[] soluciones = obtenerSolucionesCuadraticas(coeficientesNumericos);
+            mostrarSoluciones(soluciones);
+        } else {
+            System.out.println("La ecuación no tiene solución en los reales.");
+        }
+    }
+    public static Double[] obtenerSolucionesCuadraticas(Double[] coeficientesNumericos) {
         Double[] soluciones = new Double[2];
+
         try {
             Double discriminante = discriminante(coeficientesNumericos);
 
@@ -21,26 +25,21 @@ public class resolverCuadratica {
 
             soluciones[0] = (-b + Math.sqrt(discriminante)) / 2*a;
             soluciones[1] = (-b - Math.sqrt(discriminante)) / 2*a;
-        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+        catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("El arreglo de coeficientes numéricos no tiene suficientes valores.");
         }
+        catch (ArithmeticException e) {
+            System.out.println("No se puede dividir por cero.");
+        }
+
         finally {
             return soluciones;
         }
     }
 
-    public Double preguntarDouble() {
-        Scanner input = new Scanner(System.in);
-        try {
-            double numero = input.nextDouble();
-            return numero;
-        } catch (InputMismatchException e) {
-            System.out.println("No se ha introducido un decimal.");
-            return preguntarDouble();
-        }
-    }
-
-    public void mostrarSoluciones(Double[] soluciones) {
+    public static void mostrarSoluciones(Double[] soluciones) {
         try {
             if (Objects.equals(soluciones[0], soluciones[1])) {
                 System.out.println("El sistema tiene una sola solución, y es " + soluciones[0]);
@@ -56,17 +55,7 @@ public class resolverCuadratica {
         }
     }
 
-    public void resolverCuadratica() {
-        Double[] coeficientesNumericos = obtenerCoeficientesNumericos();
-        if (discriminante(coeficientesNumericos) >= 0) {
-            Double[] soluciones = obtenerSolucionesCuadraticas(coeficientesNumericos);
-            mostrarSoluciones(soluciones);
-        } else {
-            System.out.println("La ecuación no tiene solución en los reales.");
-        }
-    }
-
-    public static double discriminante(Double[] coeficientesNumericos) {
+    public static Double discriminante(Double[] coeficientesNumericos) {
         Double discriminante = -1.0;
         try {
             Double a = coeficientesNumericos[0];
@@ -87,12 +76,16 @@ public class resolverCuadratica {
         }
     }
 
-    public boolean validarCoeficientesNumericos(Double[] coeficientesNumericos) {
+    public static boolean validarCoeficientesNumericos(Double[] coeficientesNumericos) {
         try {
             return (coeficientesNumericos[0] != 0) && (coeficientesNumericos.length == 3);
         }
         catch (InputMismatchException e) {
             System.out.println("El arreglo posee un valor inválido");
+            return false;
+        }
+        catch (NullPointerException e) {
+            System.out.println("Hay un valor nulo en el vector");
             return false;
         }
     }
@@ -118,5 +111,16 @@ public class resolverCuadratica {
         }
     }
 
+    public Double preguntarDouble() {
+        Scanner input = new Scanner(System.in);
+        try {
+            double numero = input.nextDouble();
+            return numero;
+        }
+        catch (InputMismatchException e) {
+            System.out.println("No se ha introducido un decimal.");
+            return preguntarDouble();
+        }
+    }
 
 }
