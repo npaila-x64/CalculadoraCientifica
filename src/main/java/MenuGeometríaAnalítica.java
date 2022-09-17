@@ -76,7 +76,7 @@ public class MenuGeometríaAnalítica {
     private void mostrarMenuCalculoRectangulo() {
         System.out.print("""
                 Usted escogió el rectángulo, los
-                rectángulos poseen 2 pares de lados iguales
+                rectángulos poseen 2 pares de lados distintos
                 Por favor, introduzca la longitud de ambos lados
                 """);
         System.out.print("1° Longitud> ");
