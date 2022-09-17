@@ -13,11 +13,27 @@ class CalculoRectaLinealUtilsTest {
     }
 
     @Test
+    void calcularPendienteFallaTest() {
+        double x1 = 3; double y1 = 3; double x2 = 1; double y2 = 1;
+        double pendienteCalculada = CalculoRectaLinealUtils.calcularPendiente(x1, y1, x2, y2);
+        double pendienteReal = 1;
+        assertEquals(pendienteReal, pendienteCalculada);
+    }
+
+    @Test
     void obtenerEcuacionTest() {
         double x1 = 1; double y1 = 2; double x2 = -2; double y2 = 3;
         String ecuacionReal = "y = -0.333333333333333x + 2.333333333333334";
         String ecuacionObtenida = CalculoRectaLinealUtils.obtenerEcuacion(x1, y1, x2, y2);
         assertEquals(ecuacionReal, ecuacionObtenida);
+    }
+
+    @Test
+    void obtenerEcuacionFallaTest() {
+        double x1 = 1; double y1 = 2; double x2 = -2; double y2 = 3;
+        String ecuacionReal = "z = -0.333333333333333x + 2.333333333333334";
+        String ecuacionObtenida = CalculoRectaLinealUtils.obtenerEcuacion(x1, y1, x2, y2);
+        assertNotEquals(ecuacionReal, ecuacionObtenida);
     }
 
     @Test
