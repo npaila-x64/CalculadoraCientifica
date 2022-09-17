@@ -17,16 +17,25 @@ public class CalculadoraTest {
     public void testDiscriminanteEcuacionValorNulo() {
         Double[] test = {0.2, null, 0.5};
         assertThrows(InputMismatchException.class,
-                () -> Calculadora.discriminanteEcuacion(test),
+                () -> resolverCuadratica.discriminante(test),
                 "Hay un valor nulo presente");
     }
 
+    @DisplayName("Discriminante con un arreglo de menos de tres valores")
+    @Test
+    public void testDiscriminante() {}
+
     @DisplayName("Prueba para validar los coeficientes numéricos, con término cuadrático igual a 0")
     @Test
-    public void testValidarCoeficientesNumericosA0(){
+    public void testValidarCoeficientesNumericosA0() {
         Double[] test = {0.0, 1.2, 7.0};
         assertFalse(Calculadora.validarCoeficientesNumericos(test));
     }
+
+
+
+
+}
 
 
 

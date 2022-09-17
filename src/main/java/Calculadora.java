@@ -1,6 +1,4 @@
-import javax.lang.model.element.ModuleElement;
-import javax.xml.catalog.Catalog;
-import java.io.IOException;
+
 import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
