@@ -1,4 +1,4 @@
-public class MenuCalculoRectaLineal {
+public class CalculoRectaLinealUtils {
 
     public static double calcularPendiente(double x1, double y1, double x2, double y2) {
         double pendiente = (y1 - y2)/(x1 - x2);
