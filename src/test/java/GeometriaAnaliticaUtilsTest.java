@@ -11,9 +11,20 @@ class GeometriaAnaliticaUtilsTest {
     }
 
     @Test
+    void verificaCalcularPerimetroCuadrilateroFallaTest() {
+        assertThrows(IllegalArgumentException.class, () -> GeometriaAnaliticaUtils.calcularPerimetroCuadrilatero(2, 1, 0, 0));
+    }
+
+    @Test
     void verificaCalcularAreaCuadrilateroTest() {
         double area = GeometriaAnaliticaUtils.calcularAreaCuadrilatero(2.2, 4.5);
         assertEquals(9.9, area, 1e-15);
+    }
+
+    @Test
+    void verificaCalcularAreaCuadrilateroFallaTest() {
+        assertThrows(IllegalArgumentException.class,
+                () -> GeometriaAnaliticaUtils.calcularAreaCuadrilatero(2.2, 0));
     }
 
     @Test
