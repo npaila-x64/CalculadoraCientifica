@@ -3,26 +3,41 @@ import java.util.Scanner;
 
 public class SistemaEcuaciones {
     public static void main(String[] args) {
+        menuResolucionSistema();
+    }
+
+    private static void menuResolucionSistema() {
         double[][] sistemaEcuaciones = generarSistema();
         llenarMatriz(sistemaEcuaciones);
         mostrarSistema(sistemaEcuaciones);
-
-        double x = encontrarX(sistemaEcuaciones);
-        double y = encontrarY(sistemaEcuaciones);
-
-        System.out.println("X = " + x);
-        System.out.println("Y = " + y);
-
+        resolverSistema(sistemaEcuaciones);
     }
-    private static double encontrarY(double[][] sistemaEcuaciones) {
+
+    private static void resolverSistema(double[][] sistemaEcuaciones) {
         double determinante = calcularDeterminante(sistemaEcuaciones);
         double determinanteY = calcularDeterminanteEnY(sistemaEcuaciones);
-        return determinanteY/determinante;
-    }
-    private static double encontrarX(double[][] sistemaEcuaciones) {
-        double determinante = calcularDeterminante(sistemaEcuaciones);
         double determinanteX = calcularDeterminanteEnX(sistemaEcuaciones);
-        return determinanteX/determinante;
+
+        if(noHaySolucion(determinante, determinanteX, determinanteY)){
+            System.out.println("EL SISTEMA NO TIENE SOLUCION");
+            return;
+        }
+        if(hayInfinitasSoluciones(determinante, determinanteX, determinanteY)){
+            System.out.println("EL SISTEMA TIENE INFINITAS SOLUCIONES");
+            return;
+        }
+        double x = determinanteX/determinante;
+        double y = determinanteY/determinante;
+        System.out.println("X = " + x);
+        System.out.println("Y = " + y);
+    }
+
+    private static boolean hayInfinitasSoluciones(double determinante, double determinanteX, double determinanteY) {
+        return (determinante == 0 && determinanteX == 0 && determinanteY ==0);
+    }
+
+    private static boolean noHaySolucion(double determinante, double determinanteX, double determinanteY) {
+        return (determinante == 0 && determinanteX != 0 || determinanteY !=0);
     }
 
     public static double calcularDeterminanteEnY(double[][] sistemaEcuaciones){
