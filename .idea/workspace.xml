@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d88fcf17-9e97-4e0e-8f6a-b23a140eae6c" name="Changes" comment="agrega clase calculadora">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resolverCuadratica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resolverCuadratica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resolverCuadraticaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
