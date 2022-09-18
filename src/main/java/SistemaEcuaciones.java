@@ -37,7 +37,7 @@ public class SistemaEcuaciones {
     }
 
     private static boolean noHaySolucion(double determinante, double determinanteX, double determinanteY) {
-        return (determinante == 0 && determinanteX != 0 || determinanteY !=0);
+        return (determinante == 0 && (determinanteX != 0 || determinanteY !=0));
     }
 
     public static double calcularDeterminanteEnY(double[][] sistemaEcuaciones){
@@ -66,7 +66,7 @@ public class SistemaEcuaciones {
 
         return (coeficienteX1 * coeficienteY2)-(coeficienteY1 * coeficienteX2);
     }
-    private static void mostrarSistema(double[][] sistemaEcuaciones) {
+    public static void mostrarSistema(double[][] sistemaEcuaciones) {
         for (double[] ecuacion : sistemaEcuaciones) {
             System.out.print(ecuacion[0] + "X ");
             System.out.print(ecuacion[1] + "Y ");
