@@ -20,7 +20,7 @@ public class MenuCalculoRectaLineal {
         System.out.print("""
                 Una recta lineal es un conjunto infinito de puntos cuyas
                 coordenadas cumplen con la siguiente ecuación: y = mx + b
-                Para obtener la ecuación una recta lineal se
+                Para obtener la ecuación de una recta lineal se
                 necesita a lo menos dos puntos; (x1,y1) y (x2,y2)
                 """);
         System.out.print("x1> ");
