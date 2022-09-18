@@ -6,7 +6,7 @@ public class OperacionesBasicas {
         menuPrincipal();
     }
 
-    private static void menuPrincipal() {
+    public static void menuPrincipal() {
         salirBucle:
         while(true){
             mostrarOpcionesMenu();

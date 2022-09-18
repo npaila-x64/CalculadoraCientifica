@@ -6,7 +6,7 @@ public class SistemaEcuaciones {
         menuResolucionSistema();
     }
 
-    private static void menuResolucionSistema() {
+    public static void menuResolucionSistema() {
         double[][] sistemaEcuaciones = generarSistema();
         llenarMatriz(sistemaEcuaciones);
         mostrarSistema(sistemaEcuaciones);
