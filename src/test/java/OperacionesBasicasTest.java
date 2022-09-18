@@ -35,7 +35,11 @@ public class OperacionesBasicasTest {
     public void dividirTestDivisionPorCero(){
         assertEquals(OperacionesBasicas.dividir(10, 0), Double.NaN);
     }
-
+    @Test
+    @DisplayName("Prueba unitaria numero mayor")
+    public void numeroMayorTest(){
+        assertEquals(OperacionesBasicas.numeroMayor(10, 3), 10);
+    }
     @Test
     @DisplayName("Prueba unitaria numero menor")
     public void numeroMenorTest(){
