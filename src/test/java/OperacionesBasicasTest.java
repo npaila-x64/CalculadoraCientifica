@@ -9,8 +9,11 @@ public class OperacionesBasicasTest {
     @DisplayName("Prueba unitaria suma")
     public void sumarTest(){
         assertEquals(OperacionesBasicas.sumar(1, 5), 6);
-        assertEquals(OperacionesBasicas.sumar(1, -5), -4);
-        assertEquals(OperacionesBasicas.sumar(1,0), 1);
+    }
+    @Test
+    @DisplayName("Prueba unitaria suma overflow")
+    public void sumarTestOverflow(){
+        assertEquals(OperacionesBasicas.sumar(Double.MAX_VALUE, Double.MAX_VALUE), Double.POSITIVE_INFINITY);
     }
 
     @Test
@@ -18,13 +21,22 @@ public class OperacionesBasicasTest {
     public void restarTest(){
         assertEquals(OperacionesBasicas.restar(1,-3),4);
     }
+    @Test
+    @DisplayName("Prueba unitaria resta underflow")
+    public void restarTestUnderflow(){
+        assertEquals(OperacionesBasicas.restar(Double.MIN_VALUE, Double.MIN_VALUE),0);
+    }
 
     @Test
     @DisplayName("Prueba unitaria multiplicacion")
     public void multiplicarTest(){
         assertEquals(OperacionesBasicas.multiplicar(5, 3), 15);
     }
-
+    @Test
+    @DisplayName("Prueba unitaria multiplicacion overflow")
+    public void multiplicarTestOverflow(){
+        assertEquals(OperacionesBasicas.multiplicar(Double.MAX_VALUE, 2), Double.POSITIVE_INFINITY);
+    }
     @Test
     @DisplayName("Prueba unitaria division")
     public void dividirTest(){
@@ -33,12 +45,17 @@ public class OperacionesBasicasTest {
     @Test
     @DisplayName("Prueba unitaria division por cero con dividendo positivo")
     public void dividirTestDivisionPorCero(){
-        assertEquals(OperacionesBasicas.dividir(10, 0), Double.NaN);
+        assertEquals(OperacionesBasicas.dividir(0, 0), Double.NaN);
     }
     @Test
     @DisplayName("Prueba unitaria numero mayor")
     public void numeroMayorTest(){
-        assertEquals(OperacionesBasicas.numeroMayor(10, 3), 10);
+        assertEquals(OperacionesBasicas.numeroMayor(-3, 1), 1);
+    }
+    @Test
+    @DisplayName("Prueba unitaria numero mayor overflow")
+    public void numeroMayorTestOverflow(){
+        assertEquals(OperacionesBasicas.numeroMayor(Double.MAX_VALUE*2, 1), Double.POSITIVE_INFINITY);
     }
     @Test
     @DisplayName("Prueba unitaria numero menor")
@@ -46,11 +63,10 @@ public class OperacionesBasicasTest {
         assertEquals(OperacionesBasicas.numeroMenor(10, 3), 3);
     }
     @Test
-    @DisplayName("Prueba unitaria numeros menor dados numeros iguales")
-    public void numeroMenorTestNumerosIguales(){
-        assertEquals(OperacionesBasicas.numeroMenor(10, 10), 10);
+    @DisplayName("Prueba unitaria numero menor overflow")
+    public void numeroMenorTestUnderflow(){
+        assertEquals(OperacionesBasicas.numeroMenor(Double.MIN_VALUE*Double.MIN_VALUE, 3), 0);
     }
-
     @Test
     @DisplayName("Prueba unitaria elevar numero por otro")
     public void elevarNumeroTest(){

@@ -13,7 +13,7 @@ public class SistemaEcuaciones {
         resolverSistema(sistemaEcuaciones);
     }
 
-    private static void resolverSistema(double[][] sistemaEcuaciones) {
+    public static void resolverSistema(double[][] sistemaEcuaciones) {
         double determinante = calcularDeterminante(sistemaEcuaciones);
         double determinanteY = calcularDeterminanteEnY(sistemaEcuaciones);
         double determinanteX = calcularDeterminanteEnX(sistemaEcuaciones);
@@ -32,11 +32,11 @@ public class SistemaEcuaciones {
         System.out.println("Y = " + y);
     }
 
-    private static boolean hayInfinitasSoluciones(double determinante, double determinanteX, double determinanteY) {
+    public static boolean hayInfinitasSoluciones(double determinante, double determinanteX, double determinanteY) {
         return (determinante == 0 && determinanteX == 0 && determinanteY ==0);
     }
 
-    private static boolean noHaySolucion(double determinante, double determinanteX, double determinanteY) {
+    public static boolean noHaySolucion(double determinante, double determinanteX, double determinanteY) {
         return (determinante == 0 && (determinanteX != 0 || determinanteY !=0));
     }
 
